@@ -2,234 +2,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxy Packs | Foxy Shader 1.5</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Download the latest Foxy Shader 1.5 for Minecraft from Foxy Packs.">
+<title>Foxy Packs | Minecraft Downloads</title>
+<link rel="icon" href="fox.png">
 
-    <link rel="icon" href="fox.png" type="image/png">
+<meta name="description" content="Download Foxy Shader 1.5 and Foxy SML Texture Pack for Minecraft.">
 
-    <!-- Google AdSense -->
-    <script async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7497620067936482"
-        crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7497620067936482" crossorigin="anonymous"></script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #080812;
-            color: white;
-            overflow-x: hidden;
-        }
+body{
+font-family:Arial,sans-serif;
+background:#080812;
+color:white;
+}
 
-        header {
-            padding: 25px;
-            text-align: center;
-            background: linear-gradient(135deg, #18002e, #4b0082, #110020);
-            border-bottom: 2px solid #a855f7;
-        }
+header{
+text-align:center;
+padding:30px;
+background:linear-gradient(135deg,#16002d,#6200a8,#090015);
+border-bottom:2px solid #a855f7;
+}
 
-        header h1 {
-            font-size: 45px;
-            color: #d8a4ff;
-            text-shadow: 0 0 20px #a855f7;
-        }
+header h1{
+font-size:45px;
+color:#d8a4ff;
+text-shadow:0 0 20px #a855f7;
+}
 
-        header p {
-            margin-top: 10px;
-            color: #ddd;
-        }
+header p{margin-top:10px;color:#ddd}
 
-        nav {
-            text-align: center;
-            padding: 15px;
-            background: #11001e;
-        }
+nav{
+text-align:center;
+padding:18px;
+background:#12001f;
+}
 
-        nav a {
-            color: #d8a4ff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav a{
+color:#d8a4ff;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
 
-        nav a:hover {
-            color: white;
-        }
+.hero{
+text-align:center;
+padding:70px 20px;
+background:radial-gradient(circle,#32104e,#080812 70%);
+}
 
-        .hero {
-            text-align: center;
-            padding: 75px 20px;
-            background: radial-gradient(circle, #32104e, #080812 70%);
-        }
+.hero h2{
+font-size:38px;
+color:#c084fc;
+margin-bottom:15px;
+}
 
-        .hero h2 {
-            font-size: 38px;
-            color: #c084fc;
-        }
+.hero p{color:#ccc}
 
-        .hero p {
-            margin-top: 15px;
-            color: #ccc;
-        }
+.downloads{
+padding:50px 20px;
+text-align:center;
+}
 
-        .section {
-            padding: 45px 20px;
-            text-align: center;
-        }
+.downloads h2{
+font-size:32px;
+color:#c084fc;
+margin-bottom:35px;
+}
 
-        .section h2 {
-            color: #c084fc;
-            margin-bottom: 30px;
-            font-size: 30px;
-        }
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
 
-        .card {
-            max-width: 600px;
-            margin: auto;
-            padding: 30px;
-            background: #151020;
-            border: 1px solid #9333ea;
-            border-radius: 18px;
-            box-shadow: 0 0 25px #6b21a855;
-            transition: 0.3s;
-        }
+.card{
+width:320px;
+padding:30px;
+background:#151020;
+border:1px solid #9333ea;
+border-radius:18px;
+box-shadow:0 0 20px #6b21a855;
+transition:.3s;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 35px #a855f7;
-        }
+.card:hover{
+transform:translateY(-7px);
+box-shadow:0 0 30px #a855f7;
+}
 
-        .card h3 {
-            font-size: 28px;
-            color: #d8a4ff;
-            margin-bottom: 15px;
-        }
+.card h3{
+font-size:25px;
+color:#d8a4ff;
+margin-bottom:15px;
+}
 
-        .card p {
-            color: #ccc;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
+.card p{
+color:#ccc;
+line-height:1.6;
+margin-bottom:25px;
+}
 
-        .badge {
-            display: inline-block;
-            padding: 7px 15px;
-            background: #9333ea;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
+.badge{
+display:inline-block;
+background:#9333ea;
+padding:7px 15px;
+border-radius:20px;
+margin-bottom:18px;
+}
 
-        .download {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #9333ea, #c026d3);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.download{
+display:inline-block;
+padding:14px 22px;
+background:linear-gradient(135deg,#9333ea,#c026d3);
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
 
-        .download:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #c026d3;
-        }
+.download:hover{opacity:.8}
 
-        .socials a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 20px;
-            color: white;
-            background: #241331;
-            border: 1px solid #9333ea;
-            border-radius: 8px;
-            text-decoration: none;
-        }
+.socials{
+text-align:center;
+padding:40px 20px;
+}
 
-        .socials a:hover {
-            background: #9333ea;
-        }
+.socials h2{
+color:#c084fc;
+margin-bottom:20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #11001e;
-            color: #aaa;
-        }
-    </style>
+.socials a{
+display:inline-block;
+margin:8px;
+padding:12px 20px;
+background:#241331;
+border:1px solid #9333ea;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#11001e;
+color:#aaa;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>🦊 FOXY PACKS</h1>
-    <p>Minecraft Shaders • Texture Packs • Foxy Gaming</p>
+<h1>🦊 FOXY PACKS</h1>
+<p>Minecraft Shaders • Texture Packs • Foxy Gaming</p>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#shader">Latest Shader</a>
-    <a href="#social">Socials</a>
+<a href="#home">Home</a>
+<a href="#downloads">Downloads</a>
+<a href="#socials">Socials</a>
 </nav>
 
 <section class="hero" id="home">
-    <h2>Welcome to Foxy Packs</h2>
-    <p>Your ultimate Minecraft shader experience.</p>
-    <p>Beautiful graphics. Smooth gameplay. Foxy style.</p>
+<h2>Welcome to Foxy Packs</h2>
+<p>Discover amazing Minecraft shaders and texture packs.</p>
+<p>Made for gamers. Made by Foxy.</p>
 </section>
 
-<section class="section" id="shader">
-    <h2>🔥 Latest Shader</h2>
+<section class="downloads" id="downloads">
+<h2>🔥 Minecraft Downloads</h2>
 
-    <div class="card">
-        <span class="badge">LATEST VERSION</span>
+<div class="container">
 
-        <h3>Foxy Shader 1.5</h3>
+<!-- FOXY SHADER 1.5 -->
+<div class="card">
+<span class="badge">LATEST SHADER</span>
+<h3>🔥 Foxy Shader 1.5</h3>
+<p>Experience Minecraft with the latest Foxy Shader 1.5.</p>
 
-        <p>
-            Experience Minecraft with the latest Foxy Shader.
-            Download the newest version and enjoy your game!
-        </p>
+<a class="download"
+href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip"
+download>
+DOWNLOAD SHADER
+</a>
+</div>
 
-        <a class="download"
-           href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip"
-           download>
-           ⬇ DOWNLOAD FOXY 1.5
-        </a>
-    </div>
+<!-- FOXY SML TEXTURE -->
+<div class="card">
+<span class="badge">TEXTURE PACK</span>
+<h3>🦊 Foxy SML Texture</h3>
+<p>Download the Foxy SML Minecraft texture pack.</p>
+
+<a class="download"
+href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%20SML.zip"
+download>
+DOWNLOAD TEXTURE
+</a>
+</div>
+
+</div>
 </section>
 
-<section class="section" id="social">
-    <h2>🌐 Join Foxy Community</h2>
+<section class="socials" id="socials">
+<h2>🌐 Join Foxy Community</h2>
 
-    <div class="socials">
-        <a href="https://discord.gg/vmrEqkPFF" target="_blank">
-            Discord
-        </a>
+<a href="https://discord.gg/vmrEqkPFF" target="_blank">Discord</a>
 
-        <a href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT"
-           target="_blank">
-            YouTube
-        </a>
+<a href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT" target="_blank">YouTube</a>
 
-        <a href="https://www.instagram.com/firemanfox1066/"
-           target="_blank">
-            Instagram
-        </a>
-    </div>
+<a href="https://www.instagram.com/firemanfox1066/" target="_blank">Instagram</a>
 </section>
 
 <footer>
-    <p>© 2026 Foxy Packs | GAYEnGaming</p>
-    <p>Minecraft content made with ❤️</p>
+<p>© 2026 Foxy Packs | GAYEnGaming</p>
+<p>Minecraft content made with ❤️</p>
 </footer>
 
 </body>
