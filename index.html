@@ -9,252 +9,455 @@
 <link rel="icon" href="https://github.com/GAYEnGaming/foxy-packs/raw/main/fox.png">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{background:#08000f;color:white;overflow-x:hidden}
-.video-background{position:fixed;inset:0;z-index:-2;overflow:hidden}
-.video-background iframe{width:100vw;height:100vh;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.4);pointer-events:none}
-.overlay{position:fixed;inset:0;background:rgba(5,0,15,.85);z-index:-1}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:#10001ddd;border-bottom:1px solid #a100ff;backdrop-filter:blur(12px);position:sticky;top:0;z-index:10}
-.logo{font-size:26px;font-weight:bold;color:#d500ff;text-shadow:0 0 15px #b000ff}
-nav a{color:white;text-decoration:none;margin-left:18px}
-nav a:hover,footer a:hover{color:#ff00d4}
-.hero{text-align:center;padding:90px 20px}
-.hero h1{font-size:clamp(40px,7vw,75px);color:#ff00d4;text-shadow:0 0 25px #9d00ff}
-.hero p{margin-top:15px;color:#ddd}
-.btn{display:inline-block;margin:15px 5px;padding:13px 25px;border-radius:30px;background:linear-gradient(90deg,#9000ff,#ff00c8);color:white;text-decoration:none;font-weight:bold;border:none;cursor:pointer;box-shadow:0 0 15px #a000ff}
-.btn:hover{transform:scale(1.05)}
-section{padding:55px 8%;text-align:center}
-section h2{color:#ff00d4;font-size:32px;margin-bottom:25px;text-shadow:0 0 15px #8000ff}
-.cards{display:flex;justify-content:center;flex-wrap:wrap;gap:22px}
-.card{width:300px;background:#190028dd;border:1px solid #a000ff;border-radius:18px;padding:28px;transition:.3s;box-shadow:0 0 15px #8000ff22}
-.card:hover{transform:translateY(-7px);box-shadow:0 0 25px #a000ff}
-.card h3{color:#ff00d4;margin-bottom:15px;font-size:23px}
-.card p{color:#ccc;line-height:1.6}
-.status{display:inline-block;padding:9px 16px;border:1px solid #00ff80;color:#00ff80;border-radius:20px;margin:15px}
-.dashboard{display:flex;justify-content:center;flex-wrap:wrap;gap:20px}
-.stat{width:220px;background:#160023dd;border:1px solid #a000ff;border-radius:15px;padding:25px}
-.stat h3{color:#aaa;font-size:16px}
-.stat strong{display:block;font-size:35px;color:#ff00d4;margin-top:12px}
-.online-dot{color:#00ff80}
-.video-box{max-width:800px;margin:auto;border:2px solid #a000ff;border-radius:15px;overflow:hidden}
-.video-box iframe{width:100%;aspect-ratio:16/9;border:0}
-form{max-width:600px;margin:20px auto;padding:25px;background:#140023ee;border:1px solid #9000ff;border-radius:15px}
-input,textarea,select{width:100%;padding:13px;margin:10px 0;background:#10001c;color:white;border:1px solid #7000ff;border-radius:8px}
-textarea{min-height:120px;resize:vertical}
-footer{text-align:center;padding:30px;background:#10001eee;border-top:1px solid #9000ff}
-footer a{color:#ff00d4;text-decoration:none;margin:8px;display:inline-block}
-.small{color:#aaa;font-size:13px;margin-top:12px}
-@media(max-width:700px){header{flex-direction:column;gap:15px}nav{text-align:center}nav a{display:inline-block;margin:8px}.hero{padding-top:60px}}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #08000f;
+  color: white;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, #51008055, transparent 40%),
+    radial-gradient(circle at 80% 80%, #ff008033, transparent 40%),
+    #08000f;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: #10001ddd;
+  border-bottom: 1px solid #a100ff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #d500ff;
+  text-shadow: 0 0 15px #b000ff;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: .3s;
+}
+
+nav a:hover { color: #ff00d4; }
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 75px);
+  color: #ff00d4;
+  text-shadow: 0 0 25px #9d00ff;
+}
+
+.hero p {
+  margin-top: 15px;
+  color: #ddd;
+}
+
+.btn {
+  display: inline-block;
+  margin: 15px 5px;
+  padding: 13px 25px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #9000ff, #ff00c8);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px #a000ff;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 30px #ff00d4;
+}
+
+section {
+  padding: 55px 8%;
+  text-align: center;
+}
+
+section h2 {
+  color: #ff00d4;
+  font-size: 32px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #8000ff;
+}
+
+.cards, .dashboard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.card, .stat {
+  width: 300px;
+  background: #190028dd;
+  border: 1px solid #a000ff;
+  border-radius: 18px;
+  padding: 28px;
+  transition: .3s;
+  box-shadow: 0 0 15px #8000ff22;
+}
+
+.card:hover, .stat:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 0 25px #a000ff;
+}
+
+.card h3 {
+  color: #ff00d4;
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+.card p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.stat {
+  width: 240px;
+}
+
+.stat h3 {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 36px;
+  color: #ff00d4;
+  margin-top: 15px;
+}
+
+.online-dot {
+  color: #00ff80;
+  text-shadow: 0 0 10px #00ff80;
+}
+
+.status {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid #00ff80;
+  color: #00ff80;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #140023ee;
+  border: 1px solid #9000ff;
+  border-radius: 15px;
+}
+
+form h3 {
+  color: #ff00d4;
+  margin-bottom: 15px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  background: #10001c;
+  color: white;
+  border: 1px solid #7000ff;
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #10001eee;
+  border-top: 1px solid #9000ff;
+}
+
+footer a {
+  color: #ff00d4;
+  text-decoration: none;
+  margin: 8px;
+  display: inline-block;
+}
+
+.small {
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+@media(max-width:700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav { text-align: center; }
+
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  .hero { padding-top: 60px; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="video-background">
-<iframe src="https://www.youtube.com/embed/Srl6SjQQIxE?autoplay=1&mute=1&loop=1&playlist=Srl6SjQQIxE&controls=0"
-allow="autoplay; encrypted-media"></iframe>
-</div>
-<div class="overlay"></div>
-
 <header>
-<div class="logo">🦊 FOX GAMING</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#downloads">Downloads</a>
-<a href="#dashboard">Dashboard</a>
-<a href="#video">Video</a>
-<a href="#community">Community</a>
-<a href="#help">Help Center</a>
-</nav>
+  <div class="logo">🦊 FOX GAMING</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#community">Community</a>
+    <a href="#help">Help Center</a>
+  </nav>
 </header>
 
+<!-- HOME -->
 <div class="hero" id="home">
-<h1>FOX GAMING</h1>
-<p>Official Minecraft Shader & Texture Pack Website</p>
-<p>Download packs, join the community, and enjoy Minecraft!</p>
-<a href="#downloads" class="btn">🔥 EXPLORE DOWNLOADS</a>
-<div><span class="status">● Website Online</span></div>
+  <h1>FOX GAMING</h1>
+  <p>Official Minecraft Shader & Texture Pack Website</p>
+  <p>Download packs, join our community, and enjoy Minecraft!</p>
+
+  <a href="#downloads" class="btn">🔥 EXPLORE DOWNLOADS</a>
+
+  <div>
+    <span class="status">● Website Online</span>
+  </div>
 </div>
 
 <!-- DOWNLOADS -->
 <section id="downloads">
-<h2>🔥 Minecraft Downloads</h2>
-<div class="cards">
+  <h2>🔥 Minecraft Downloads</h2>
 
-<div class="card">
-<h3>Foxy Shader 1.5</h3>
-<p>Experience Minecraft with improved visuals and effects.</p>
-<a class="btn" href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip">
-Download Shader
-</a>
-</div>
+  <div class="cards">
 
-<div class="card">
-<h3>Fox SML Texture</h3>
-<p>Download the Fox SML Minecraft texture pack.</p>
-<a class="btn" href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Fox%20SML%20Texture.zip">
-Download Texture
-</a>
-</div>
+    <div class="card">
+      <h3>Foxy Shader 1.5</h3>
+      <p>Experience Minecraft with improved visuals and effects.</p>
 
-</div>
-<p class="small">Download links require the ZIP filenames to match your GitHub repository exactly.</p>
+      <a class="btn"
+         href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip">
+        Download Shader
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Fox SML Texture</h3>
+      <p>Download the Fox SML Minecraft texture pack.</p>
+
+      <a class="btn"
+         href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Fox%20SML%20Texture.zip">
+        Download Texture
+      </a>
+    </div>
+
+  </div>
 </section>
 
-<!-- WEBSITE DASHBOARD -->
+<!-- DASHBOARD -->
 <section id="dashboard">
-<h2>📊 FOX GAMING LIVE DASHBOARD</h2>
+  <h2>📊 FOX GAMING LIVE DASHBOARD</h2>
 
-<div class="dashboard">
+  <div class="dashboard">
 
-<div class="stat">
-<h3><span class="online-dot">●</span> Website Visitors Online</h3>
-<strong id="online-count">Connecting...</strong>
-</div>
+    <div class="stat">
+      <h3><span class="online-dot">●</span> Website Visitors Online</h3>
+      <strong id="online-count">Connecting...</strong>
+    </div>
 
-<div class="stat">
-<h3>👥 Total Website Visits</h3>
-<strong id="visit-count">Loading...</strong>
-</div>
+    <div class="stat">
+      <h3>👥 Total Website Visits</h3>
+      <strong id="visit-count">Loading...</strong>
+    </div>
 
-</div>
+  </div>
 
-<p class="small">
-Live online visitor tracking requires Firebase configuration below.
-These are website visitors, not Minecraft server players.
-</p>
-</section>
-
-<!-- VIDEO -->
-<section id="video">
-<h2>🎬 Featured Video</h2>
-<div class="video-box">
-<iframe src="https://www.youtube.com/embed/Srl6SjQQIxE"
-title="Fox Gaming Video" allowfullscreen></iframe>
-</div>
-<a class="btn" href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT" target="_blank">
-Subscribe on YouTube
-</a>
+  <p class="small">
+    Live online tracking requires Firebase setup.
+    Counts website visitors, not Minecraft server players.
+  </p>
 </section>
 
 <!-- COMMUNITY -->
 <section id="community">
-<h2>🌐 Join Our Community</h2>
-<div class="cards">
+  <h2>🌐 Join Our Community</h2>
 
-<div class="card">
-<h3>Discord</h3>
-<p>Join our gaming community.</p>
-<a class="btn" href="https://discord.gg/vmrEqkPFF" target="_blank">Join Discord</a>
-</div>
+  <div class="cards">
 
-<div class="card">
-<h3>YouTube</h3>
-<p>Watch gaming videos and updates.</p>
-<a class="btn" href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT" target="_blank">Visit YouTube</a>
-</div>
+    <div class="card">
+      <h3>Discord</h3>
+      <p>Join our gaming community.</p>
+      <a class="btn" href="https://discord.gg/vmrEqkPFF" target="_blank">
+        Join Discord
+      </a>
+    </div>
 
-<div class="card">
-<h3>Instagram</h3>
-<p>Follow for gaming updates.</p>
-<a class="btn" href="https://www.instagram.com/firemanfox1066/" target="_blank">Instagram</a>
-</div>
+    <div class="card">
+      <h3>YouTube</h3>
+      <p>Watch gaming videos and updates.</p>
+      <a class="btn" href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT" target="_blank">
+        Visit YouTube
+      </a>
+    </div>
 
-</div>
+    <div class="card">
+      <h3>Instagram</h3>
+      <p>Follow for gaming updates.</p>
+      <a class="btn" href="https://www.instagram.com/firemanfox1066/" target="_blank">
+        Follow Instagram
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <!-- HELP CENTER -->
 <section id="help">
-<h2>🛠️ FOX GAMING HELP CENTER</h2>
-<p>Have a question, suggestion, or problem? Contact us!</p>
+  <h2>🛠️ FOX GAMING HELP CENTER</h2>
+  <p>Have a question, suggestion, or problem? Contact us!</p>
 
-<form action="https://formsubmit.co/firemanfoxzx@gmail.com" method="POST">
-<h3>💬 Ask a Question / Send Suggestion</h3>
+  <!-- QUESTION / SUGGESTION FORM -->
+  <form action="https://formsubmit.co/firemanfoxzx@gmail.com" method="POST">
 
-<input type="hidden" name="_subject" value="Fox Gaming Help Center - Question">
-<input type="hidden" name="_captcha" value="false">
+    <h3>💬 Ask a Question / Send Suggestion</h3>
 
-<input type="text" name="Name" placeholder="Your Name" required>
-<input type="email" name="Email" placeholder="Your Email" required>
+    <input type="hidden" name="_subject" value="Fox Gaming Help Center - Question">
+    <input type="hidden" name="_captcha" value="false">
 
-<select name="Category" required>
-<option value="">Choose a category</option>
-<option>General Question</option>
-<option>Suggestion</option>
-<option>Download Help</option>
-<option>Shader Help</option>
-<option>Texture Pack Help</option>
-<option>Other</option>
-</select>
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
 
-<textarea name="Question" placeholder="Write your question or suggestion..." required></textarea>
+    <select name="Category" required>
+      <option value="">Choose a category</option>
+      <option>General Question</option>
+      <option>Suggestion</option>
+      <option>Download Help</option>
+      <option>Shader Help</option>
+      <option>Texture Pack Help</option>
+      <option>Other</option>
+    </select>
 
-<button class="btn" type="submit">📨 Send Question</button>
-</form>
+    <textarea name="Question" placeholder="Write your question or suggestion..." required></textarea>
 
-<form action="https://formsubmit.co/firemanfoxzx@gmail.com" method="POST">
-<h3>🐛 Report a Bug</h3>
+    <button class="btn" type="submit">📨 Send Question</button>
+  </form>
 
-<input type="hidden" name="_subject" value="Fox Gaming Website - Bug Report">
-<input type="hidden" name="_captcha" value="false">
+  <!-- BUG REPORT FORM -->
+  <form action="https://formsubmit.co/firemanfoxzx@gmail.com" method="POST">
 
-<input type="text" name="Name" placeholder="Your Name" required>
-<input type="email" name="Email" placeholder="Your Email" required>
+    <h3>🐛 Report a Bug</h3>
 
-<select name="Bug Type" required>
-<option value="">Select Bug Type</option>
-<option>Download Not Working</option>
-<option>Website Error</option>
-<option>Texture Pack Problem</option>
-<option>Shader Problem</option>
-<option>Other</option>
-</select>
+    <input type="hidden" name="_subject" value="Fox Gaming Website - Bug Report">
+    <input type="hidden" name="_captcha" value="false">
 
-<textarea name="Bug Description" placeholder="Describe the bug..." required></textarea>
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
 
-<button class="btn" type="submit">🐛 Submit Bug Report</button>
-</form>
+    <select name="Bug Type" required>
+      <option value="">Select Bug Type</option>
+      <option>Download Not Working</option>
+      <option>Website Error</option>
+      <option>Texture Pack Problem</option>
+      <option>Shader Problem</option>
+      <option>Other</option>
+    </select>
 
-<p>📧 Support Email:
-<a href="mailto:firemanfoxzx@gmail.com" style="color:#ff00d4">
-firemanfoxzx@gmail.com
-</a>
-</p>
+    <textarea name="Bug Description" placeholder="Describe the bug..." required></textarea>
+
+    <button class="btn" type="submit">🐛 Submit Bug Report</button>
+  </form>
+
+  <p>
+    📧 Support Email:
+    <a href="mailto:firemanfoxzx@gmail.com" style="color:#ff00d4">
+      firemanfoxzx@gmail.com
+    </a>
+  </p>
 </section>
 
 <footer>
-<p>© 2026 FOX GAMING | Minecraft Downloads</p>
-<a href="https://discord.gg/vmrEqkPFF">Discord</a>
-<a href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT">YouTube</a>
-<a href="https://www.instagram.com/firemanfox1066/">Instagram</a>
-<a href="mailto:firemanfoxzx@gmail.com">Support</a>
-<p class="small">Made with ❤️ for Minecraft players</p>
+  <p>© 2026 FOX GAMING | Minecraft Downloads</p>
+
+  <a href="https://discord.gg/vmrEqkPFF" target="_blank">Discord</a>
+  <a href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT" target="_blank">YouTube</a>
+  <a href="https://www.instagram.com/firemanfox1066/" target="_blank">Instagram</a>
+  <a href="mailto:firemanfoxzx@gmail.com">Support</a>
+
+  <p class="small">Made with ❤️ for Minecraft players</p>
 </footer>
 
-<!-- VISIT COUNTER -->
+<!-- TOTAL WEBSITE VISITS -->
 <script>
 fetch("https://api.counterapi.dev/v1/fox-gaming-website/visits/up")
 .then(response => response.json())
 .then(data => {
-document.getElementById("visit-count").textContent =
-(data.count || 0).toLocaleString();
+  document.getElementById("visit-count").textContent =
+    (data.count || 0).toLocaleString();
 })
 .catch(() => {
-document.getElementById("visit-count").textContent = "Unavailable";
+  document.getElementById("visit-count").textContent = "Unavailable";
 });
 </script>
 
 <!-- FIREBASE LIVE VISITOR TRACKING -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, onValue, onDisconnect, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getDatabase, ref, onValue, onDisconnect, set, remove
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import {
+  getAuth, signInAnonymously
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 /*
-  Replace these placeholder values with your Firebase project config.
-  Firebase Console -> Project settings -> Your apps -> Web app.
+  Firebase setup required:
+  Replace these values with your own Firebase project configuration.
 */
+
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT.firebaseapp.com",
@@ -263,31 +466,34 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID"
 };
 
-try {
-  if (firebaseConfig.apiKey === "YOUR_API_KEY") {
-    document.getElementById("online-count").textContent = "Setup required";
-  } else {
+const onlineDisplay = document.getElementById("online-count");
+
+if (firebaseConfig.apiKey === "YOUR_API_KEY") {
+  onlineDisplay.textContent = "Setup required";
+} else {
+  try {
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
     const auth = getAuth(app);
 
     signInAnonymously(auth).then(async (credential) => {
       const uid = credential.user.uid;
-      const myRef = ref(db, "online/" + uid);
+      const userRef = ref(db, "online/" + uid);
 
-      await onDisconnect(myRef).remove();
-      await set(myRef, true);
+      await onDisconnect(userRef).remove();
+      await set(userRef, true);
 
       onValue(ref(db, "online"), (snapshot) => {
-        const count = snapshot.size || 0;
-        document.getElementById("online-count").textContent = count;
+        onlineDisplay.textContent = snapshot.numChildren();
       });
+
     }).catch(() => {
-      document.getElementById("online-count").textContent = "Unavailable";
+      onlineDisplay.textContent = "Unavailable";
     });
+
+  } catch (error) {
+    onlineDisplay.textContent = "Unavailable";
   }
-} catch (error) {
-  document.getElementById("online-count").textContent = "Setup required";
 }
 </script>
 
