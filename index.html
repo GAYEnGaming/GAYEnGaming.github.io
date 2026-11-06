@@ -2,310 +2,757 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Foxy Packs | Minecraft Shaders & Texture Packs</title>
-    <meta name="description" content="Download Foxy Minecraft shaders and texture packs. Explore Foxy shader versions and improve your Minecraft experience.">
-    <meta name="robots" content="index, follow">
+  <title>Foxy Packs | Minecraft Shaders & Texture Packs</title>
+  <meta name="description" content="Download Foxy Packs Minecraft shaders and texture packs. Explore Foxy versions and transform your Minecraft world.">
+  <meta name="theme-color" content="#10091f">
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7497620067936482"
-         crossorigin="anonymous"></script>
+  <!-- Foxy Packs favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7497620067936482"
+     crossorigin="anonymous"></script>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0714;
-            color: #fff;
-            line-height: 1.6;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background: #160d27;
-            padding: 25px 15px;
-            text-align: center;
-            border-bottom: 2px solid #a855f7;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1 {
-            font-size: 38px;
-            color: #c084fc;
-            text-shadow: 0 0 15px #9333ea;
-        }
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #090611;
+      color: #f8f5ff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        header p {
-            color: #ddd;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        nav {
-            text-align: center;
-            padding: 15px;
-            background: #11091e;
-        }
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
 
-        nav a {
-            color: #d8b4fe;
-            margin: 0 12px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 6, 17, 0.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(170, 100, 255, 0.18);
+    }
 
-        nav a:hover {
-            color: white;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 0;
+      gap: 20px;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 65px 20px;
-            background: linear-gradient(135deg, #160d27, #30104d);
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
 
-        .hero h2 {
-            font-size: 32px;
-            color: #e9d5ff;
-        }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #a855f7, #6d28d9);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+      font-size: 24px;
+    }
 
-        .hero p {
-            max-width: 700px;
-            margin: 15px auto;
-            color: #ddd;
-        }
+    .logo span {
+      color: #c084fc;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 35px 20px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 14px;
+      color: #c7bdd8;
+    }
 
-        .section-title {
-            text-align: center;
-            color: #c084fc;
-            font-size: 28px;
-            margin-bottom: 25px;
-        }
+    .nav-links a:hover {
+      color: #c084fc;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
+    .nav-button {
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: #9333ea;
+      color: white !important;
+      font-weight: bold;
+    }
 
-        .card {
-            background: #1b102b;
-            border: 1px solid #6b21a8;
-            border-radius: 12px;
-            padding: 22px;
-            text-align: center;
-            transition: 0.3s;
-        }
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 100px 0 75px;
+      overflow: hidden;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #c084fc;
-            box-shadow: 0 0 15px #581c87;
-        }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(147, 51, 234, 0.22), transparent 70%);
+      top: -180px;
+      right: -100px;
+      pointer-events: none;
+    }
 
-        .card h3 {
-            color: #d8b4fe;
-            margin-bottom: 10px;
-        }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 45px;
+    }
 
-        .card p {
-            color: #ccc;
-            margin-bottom: 15px;
-        }
+    .tag {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(192, 132, 252, 0.35);
+      border-radius: 100px;
+      background: rgba(147, 51, 234, 0.1);
+      color: #d8b4fe;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
 
-        .download {
-            display: inline-block;
-            background: #9333ea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
 
-        .download:hover {
-            background: #a855f7;
-        }
+    .gradient-text {
+      background: linear-gradient(90deg, #c084fc, #f0abfc, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-        .info {
-            background: #160d27;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 25px;
-        }
+    .hero p {
+      color: #b9aecb;
+      font-size: 17px;
+      max-width: 560px;
+      margin-bottom: 30px;
+    }
 
-        .info h3 {
-            color: #c084fc;
-            margin-bottom: 10px;
-        }
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-        .info p, .info li {
-            color: #ddd;
-        }
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
 
-        .info ul {
-            padding-left: 25px;
-        }
+    .button-primary {
+      background: linear-gradient(135deg, #9333ea, #7c3aed);
+      box-shadow: 0 8px 30px rgba(147, 51, 234, 0.25);
+    }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #100719;
-            border-top: 1px solid #6b21a8;
-            color: #aaa;
-        }
+    .button-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(147, 51, 234, 0.4);
+    }
 
-        footer a {
-            color: #c084fc;
-            text-decoration: none;
-        }
-    </style>
+    .button-secondary {
+      border: 1px solid #39294f;
+      background: #151020;
+    }
+
+    .button-secondary:hover {
+      border-color: #a855f7;
+    }
+
+    .hero-art {
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .fox-circle {
+      width: 270px;
+      height: 270px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 120px;
+      background: radial-gradient(circle at 35% 30%, #3b1b5e, #160b25 70%);
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      box-shadow: 0 0 70px rgba(147, 51, 234, 0.25),
+                  inset 0 0 40px rgba(147, 51, 234, 0.12);
+    }
+
+    .floating-label {
+      position: absolute;
+      bottom: 25px;
+      right: 0;
+      padding: 12px 17px;
+      background: #1a1028;
+      border: 1px solid #4c2672;
+      border-radius: 12px;
+      color: #e9d5ff;
+      font-weight: bold;
+      box-shadow: 0 10px 30px #0005;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 25px 0 75px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid #281b39;
+      background: linear-gradient(145deg, #151020, #0e0a16);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+      color: #c084fc;
+    }
+
+    .stat span {
+      color: #a99bbd;
+      font-size: 13px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 35px 0 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: #a99bbd;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      padding: 25px;
+      background: linear-gradient(145deg, #171020, #0e0a16);
+      border: 1px solid #2c1d3d;
+      border-radius: 18px;
+      transition: 0.25s;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #8b5cf6;
+      box-shadow: 0 15px 35px rgba(109, 40, 217, 0.13);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      border-radius: 14px;
+      background: #2b1741;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #a99bbd;
+      font-size: 14px;
+      min-height: 45px;
+      margin-bottom: 20px;
+    }
+
+    .version {
+      display: inline-block;
+      color: #d8b4fe;
+      font-size: 12px;
+      border: 1px solid #4c2672;
+      border-radius: 6px;
+      padding: 4px 8px;
+      margin-bottom: 14px;
+    }
+
+    .download {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      background: #7e22ce;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .download:hover {
+      background: #9333ea;
+    }
+
+    .texture-card {
+      grid-column: span 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      background: linear-gradient(120deg, #20102f, #110b1b);
+    }
+
+    .texture-card .card-content {
+      flex: 1;
+    }
+
+    .texture-card p {
+      min-height: auto;
+    }
+
+    .texture-card .download {
+      min-width: 190px;
+    }
+
+    /* INSTALL */
+    .install-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .install-step {
+      padding: 25px;
+      border-radius: 16px;
+      background: #130d1d;
+      border: 1px solid #2a1c3b;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #7e22ce;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .install-step p {
+      color: #a99bbd;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    /* ABOUT */
+    .about-box {
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #342044;
+      background: linear-gradient(145deg, #1a1027, #100a18);
+    }
+
+    .about-box p {
+      max-width: 750px;
+      margin: 12px auto 0;
+      color: #b9aecb;
+    }
+
+    footer {
+      border-top: 1px solid #24182f;
+      padding: 30px 0;
+      text-align: center;
+      color: #8f829f;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #c084fc;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-art {
+        min-height: 270px;
+      }
+
+      .fox-circle {
+        width: 210px;
+        height: 210px;
+        font-size: 90px;
+      }
+
+      .floating-label {
+        right: 10%;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .texture-card {
+        grid-column: span 2;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .install-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .nav-button {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .stats {
+        gap: 8px;
+      }
+
+      .stat {
+        padding: 14px 5px;
+      }
+
+      .stat strong {
+        font-size: 21px;
+      }
+
+      .stat span {
+        font-size: 11px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .texture-card {
+        grid-column: span 1;
+      }
+
+      .card p {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🦊 FOXY PACKS</h1>
-    <p>Minecraft Shaders & Texture Packs</p>
-</header>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <div class="logo-icon">🦊</div>
+        Foxy <span>Packs</span>
+      </a>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#shaders">Shaders</a>
-    <a href="#textures">Texture Packs</a>
-    <a href="#install">Installation</a>
-</nav>
+      <div class="nav-links">
+        <a href="#packs">Packs</a>
+        <a href="#install">Installation</a>
+        <a href="#about">About</a>
+        <a href="#packs" class="nav-button">Download</a>
+      </div>
+    </div>
+  </nav>
 
-<section class="hero" id="home">
-    <h2>Welcome to Foxy Packs</h2>
-    <p>
-        Discover Foxy Minecraft shaders and texture packs.
-        Download your favorite packs and customize your Minecraft world.
-    </p>
-    <a href="#shaders" class="download">Explore Downloads</a>
-</section>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div>
+        <span class="tag">✨ Minecraft Visual Upgrade</span>
 
-<main class="container">
+        <h1>
+          Make your world<br>
+          look <span class="gradient-text">legendary.</span>
+        </h1>
 
-    <section id="shaders">
-        <h2 class="section-title">🔥 Foxy Shaders</h2>
+        <p>
+          Discover Foxy shaders and texture packs designed to bring
+          a fresh look to your Minecraft world. Download your favourite
+          version and start exploring.
+        </p>
 
-        <div class="cards">
-
-            <div class="card">
-                <h3>Foxy Shader Original</h3>
-                <p>Original Foxy shader pack.</p>
-                <a class="download"
-                   href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy.zip">
-                   Download
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>Foxy Shader 1.2</h3>
-                <p>Foxy shader version 1.2.</p>
-                <a class="download"
-                   href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%20project%201.2.zip">
-                   Download
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>Foxy Shader 1.3</h3>
-                <p>Foxy shader version 1.3.</p>
-                <a class="download"
-                   href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.3.zip">
-                   Download
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>Foxy Shader 1.4</h3>
-                <p>Foxy shader version 1.4.</p>
-                <a class="download"
-                   href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.4.zip">
-                   Download
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>Foxy Shader 1.5</h3>
-                <p>Latest listed Foxy shader version.</p>
-                <a class="download"
-                   href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip">
-                   Download
-                </a>
-            </div>
-
+        <div class="buttons">
+          <a href="#packs" class="button button-primary">Explore Packs ↓</a>
+          <a href="#install" class="button button-secondary">Installation Guide</a>
         </div>
-    </section>
+      </div>
 
-    <section id="textures" style="margin-top: 50px;">
-        <h2 class="section-title">🎨 Texture Packs</h2>
+      <div class="hero-art">
+        <div class="fox-circle">🦊</div>
+        <div class="floating-label">Foxy Packs · Free Downloads</div>
+      </div>
+    </div>
+  </header>
 
-        <div class="cards">
-            <div class="card">
-                <h3>FOX SML Texture Pack</h3>
-                <p>Download the FOX SML Minecraft texture pack.</p>
-                <a class="download"
-                   href="https://github.com/GAYEnGaming/foxy-packs/raw/main/FOX_SML%20TEXTURE.zip">
-                   Download
-                </a>
-            </div>
+  <!-- STATS -->
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <strong>5+</strong>
+        <span>Shader Versions</span>
+      </div>
+
+      <div class="stat">
+        <strong>1</strong>
+        <span>Texture Pack</span>
+      </div>
+
+      <div class="stat">
+        <strong>FREE</strong>
+        <span>Downloads</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKS -->
+  <section id="packs">
+    <div class="container">
+      <div class="section-heading">
+        <span class="tag">DOWNLOAD CENTER</span>
+        <h2>Choose Your <span class="gradient-text">Foxy Pack</span></h2>
+        <p>Pick your favourite version and download it below.</p>
+      </div>
+
+      <div class="cards">
+
+        <!-- ORIGINAL -->
+        <div class="card">
+          <div class="card-icon">🌌</div>
+          <span class="version">Original Edition</span>
+          <h3>Foxy Shader</h3>
+          <p>The original Foxy shader pack.</p>
+          <a class="download"
+             href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy.zip">
+            Download ↓
+          </a>
         </div>
-    </section>
 
-    <section id="install" class="info">
-        <h2 class="section-title">📥 Installation Guide</h2>
+        <!-- 1.2 -->
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <span class="version">Version 1.2</span>
+          <h3>Foxy Project 1.2</h3>
+          <p>Download the Foxy Project 1.2 edition.</p>
+          <a class="download"
+             href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%20project%201.2.zip">
+            Download ↓
+          </a>
+        </div>
 
-        <h3>Java Edition</h3>
-        <ul>
-            <li>Download the ZIP file.</li>
-            <li>Open Minecraft and select Options.</li>
-            <li>For shaders, install a compatible shader loader such as Iris.</li>
-            <li>Open the shader or resource pack folder.</li>
-            <li>Place the downloaded ZIP in the correct folder.</li>
-            <li>Select the pack in Minecraft.</li>
-        </ul>
+        <!-- 1.3 -->
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <span class="version">Version 1.3</span>
+          <h3>Foxy 1.3</h3>
+          <p>Get the Foxy shader 1.3 pack.</p>
+          <a class="download"
+             href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.3.zip">
+            Download ↓
+          </a>
+        </div>
 
-        <h3 style="margin-top: 20px;">Important</h3>
+        <!-- 1.4 -->
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <span class="version">Version 1.4</span>
+          <h3>Foxy 1.4</h3>
+          <p>Explore the Foxy shader 1.4 edition.</p>
+          <a class="download"
+             href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.4.zip">
+            Download ↓
+          </a>
+        </div>
+
+        <!-- 1.5 -->
+        <div class="card">
+          <div class="card-icon">💜</div>
+          <span class="version">Version 1.5</span>
+          <h3>Foxy 1.5</h3>
+          <p>Download the Foxy shader 1.5 pack.</p>
+          <a class="download"
+             href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip">
+            Download ↓
+          </a>
+        </div>
+
+        <!-- TEXTURE PACK -->
+        <div class="card texture-card">
+          <div class="card-icon">🎨</div>
+
+          <div class="card-content">
+            <span class="version">Texture Pack</span>
+            <h3>FOX SML Texture</h3>
+            <p>Download the FOX SML texture pack for your Minecraft setup.</p>
+          </div>
+
+          <a class="download"
+             href="https://github.com/GAYEnGaming/foxy-packs/raw/main/FOX_SML%20TEXTURE.zip">
+            Download Texture ↓
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALLATION -->
+  <section id="install">
+    <div class="container">
+      <div class="section-heading">
+        <span class="tag">QUICK GUIDE</span>
+        <h2>How to <span class="gradient-text">Install</span></h2>
+        <p>Follow these simple steps to install your pack.</p>
+      </div>
+
+      <div class="install-grid">
+        <div class="install-step">
+          <div class="step-number">01</div>
+          <h3>Download</h3>
+          <p>Choose a Foxy pack above and download the ZIP file.</p>
+        </div>
+
+        <div class="install-step">
+          <div class="step-number">02</div>
+          <h3>Open Minecraft</h3>
+          <p>Open Minecraft and navigate to the appropriate shader or resource pack settings.</p>
+        </div>
+
+        <div class="install-step">
+          <div class="step-number">03</div>
+          <h3>Activate</h3>
+          <p>Install or import the pack using the method supported by your Minecraft edition and enjoy!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-box">
+        <span class="tag">ABOUT FOXY PACKS</span>
+        <h2>Built for <span class="gradient-text">Minecraft fans.</span></h2>
         <p>
-            Compatibility depends on the Minecraft version and pack.
-            Do not extract the ZIP unless the pack instructions require it.
-        </p>
-    </section>
-
-    <section class="info">
-        <h2 class="section-title">About Foxy Packs</h2>
-        <p>
-            Foxy Packs is a Minecraft resource website created for players
-            who want to explore shaders and texture packs.
+          Foxy Packs is a fan-made website for sharing Minecraft shader
+          and texture pack downloads. We aim to make finding packs simple
+          and convenient.
         </p>
         <p>
-            Minecraft is a trademark of Mojang Studios.
-            Foxy Packs is an independent fan website and is not affiliated
-            with or endorsed by Mojang or Microsoft.
+          Minecraft is a trademark of Mojang Studios. Foxy Packs is not
+          affiliated with or endorsed by Mojang or Microsoft.
         </p>
-    </section>
+      </div>
+    </div>
+  </section>
 
-</main>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>🦊 <strong>Foxy Packs</strong> · Made for Minecraft fans</p>
+      <p>© <span id="year"></span> Foxy Packs. All rights reserved.</p>
+    </div>
+  </footer>
 
-<footer>
-    <p>© 2026 Foxy Packs | Made for Minecraft players 🦊</p>
-    <p>
-        <a href="#home">Back to top</a>
-    </p>
-</footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
-<link rel="icon" type="image/png" href="/favicon.png">
