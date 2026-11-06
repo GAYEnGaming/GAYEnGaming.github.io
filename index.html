@@ -16,14 +16,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background: #080808;
     color: white;
-    min-height: 100vh;
 }
 
 header {
@@ -54,12 +51,9 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #ff6a00;
-}
+nav a:hover { color: #ff6a00; }
 
 .hero {
     text-align: center;
@@ -106,9 +100,7 @@ nav a:hover {
     border: 1px solid #ff6a00;
 }
 
-section {
-    padding: 55px 7%;
-}
+section { padding: 55px 7%; }
 
 .section-title {
     text-align: center;
@@ -133,7 +125,7 @@ section {
 
 .card:hover {
     border-color: #ff6a00;
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .card h3 {
@@ -198,6 +190,23 @@ textarea {
     min-height: 130px;
 }
 
+form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.form-status {
+    margin-top: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.small-text {
+    color: #777;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
 footer {
     text-align: center;
     background: #111;
@@ -207,22 +216,7 @@ footer {
     line-height: 1.8;
 }
 
-footer strong {
-    color: #ff6a00;
-}
-
-.socials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-}
-
-.small-text {
-    color: #777;
-    font-size: 13px;
-    margin-top: 12px;
-}
+footer strong { color: #ff6a00; }
 
 @media(max-width: 600px) {
     header {
@@ -230,17 +224,11 @@ footer strong {
         text-align: center;
     }
 
-    nav {
-        justify-content: center;
-    }
+    nav { justify-content: center; }
 
-    .hero {
-        padding-top: 60px;
-    }
+    .hero { padding-top: 60px; }
 
-    section {
-        padding: 40px 5%;
-    }
+    section { padding: 40px 5%; }
 }
 </style>
 </head>
@@ -280,26 +268,20 @@ footer strong {
 
         <div class="card">
             <h3>🔥 Foxy Shader 1.5</h3>
-            <p>
-                Download the Foxy Shader pack for Minecraft.
-            </p>
+            <p>Download the Foxy Shader pack for Minecraft.</p>
 
             <a class="button"
-               href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip"
-               download>
+               href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Foxy%201.5.zip">
                Download Shader
             </a>
         </div>
 
         <div class="card">
             <h3>🦊 Fox SML Texture</h3>
-            <p>
-                Get the Fox SML Minecraft texture pack.
-            </p>
+            <p>Get the Fox SML Minecraft texture pack.</p>
 
             <a class="button"
-               href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Fox%20SML%20Texture.zip"
-               download>
+               href="https://github.com/GAYEnGaming/foxy-packs/raw/main/Fox%20SML%20Texture.zip">
                Download Texture
             </a>
         </div>
@@ -329,10 +311,6 @@ footer strong {
         </div>
 
     </div>
-
-    <p class="small-text" style="text-align:center;">
-        Visit count is provided by an external counter service.
-    </p>
 </section>
 
 <!-- COMMUNITY -->
@@ -344,6 +322,7 @@ footer strong {
         <div class="card">
             <h3>💬 Discord</h3>
             <p>Join the FOX GAMING Discord community.</p>
+
             <a class="button"
                href="https://discord.gg/vmrEqkPFF"
                target="_blank" rel="noopener">
@@ -354,6 +333,7 @@ footer strong {
         <div class="card">
             <h3>▶ YouTube</h3>
             <p>Subscribe for gaming videos and updates.</p>
+
             <a class="button"
                href="https://www.youtube.com/@DADDY_FOX_BLOXFRUIT"
                target="_blank" rel="noopener">
@@ -364,6 +344,7 @@ footer strong {
         <div class="card">
             <h3>📸 Instagram</h3>
             <p>Follow FOX GAMING on Instagram.</p>
+
             <a class="button"
                href="https://www.instagram.com/firemanfox1066/"
                target="_blank" rel="noopener">
@@ -384,17 +365,10 @@ footer strong {
         <div class="card">
             <h3>❓ Ask a Question</h3>
 
-            <form action="https://formsubmit.co/firemanfoxzx@gmail.com"
-                  method="POST">
+            <form class="help-form">
 
-                <input type="hidden" name="_subject"
-                       value="FOX GAMING - New Question">
-
-                <input type="hidden" name="_captcha"
-                       value="false">
-
-                <input type="hidden" name="_template"
-                       value="table">
+                <input type="hidden" name="type"
+                       value="Website Question">
 
                 <input type="text" name="name"
                        placeholder="Your Name" required>
@@ -402,34 +376,36 @@ footer strong {
                 <input type="email" name="email"
                        placeholder="Your Email" required>
 
-                <textarea name="question"
+                <textarea name="message"
                           placeholder="Write your question here..."
                           required></textarea>
+
+                <input type="text" name="website"
+                       tabindex="-1" autocomplete="off"
+                       style="position:absolute;left:-9999px">
 
                 <button class="button" type="submit">
                     Send Question
                 </button>
+
+                <p class="form-status" aria-live="polite"></p>
             </form>
         </div>
 
-        <!-- BUG REPORT -->
+        <!-- BUG REPORT FORM -->
         <div class="card">
             <h3>🐞 Report a Bug</h3>
 
-            <form action="https://formsubmit.co/firemanfoxzx@gmail.com"
-                  method="POST">
+            <form class="help-form">
 
-                <input type="hidden" name="_subject"
-                       value="FOX GAMING - Bug Report">
-
-                <input type="hidden" name="_captcha"
-                       value="false">
-
-                <input type="hidden" name="_template"
-                       value="table">
+                <input type="hidden" name="type"
+                       value="Bug Report">
 
                 <input type="text" name="name"
                        placeholder="Your Name" required>
+
+                <input type="email" name="email"
+                       placeholder="Your Email" required>
 
                 <select name="bug_type" required>
                     <option value="">Select Bug Type</option>
@@ -440,31 +416,37 @@ footer strong {
                     <option>Other</option>
                 </select>
 
-                <textarea name="bug_description"
+                <textarea name="message"
                           placeholder="Describe the bug..."
                           required></textarea>
+
+                <input type="text" name="website"
+                       tabindex="-1" autocomplete="off"
+                       style="position:absolute;left:-9999px">
 
                 <button class="button" type="submit">
                     Submit Bug Report
                 </button>
+
+                <p class="form-status" aria-live="polite"></p>
             </form>
         </div>
 
     </div>
 
-    <div class="card" style="margin-top:25px;text-align:center;">
+    <!-- CONTACT EMAIL -->
+    <div class="card" style="margin-top:25px;text-align:center">
         <h3>📧 Contact Support</h3>
-        <p>Need direct help? Contact us through email.</p>
+
+        <p>Need direct help? Contact us by email.</p>
 
         <a class="button"
            href="mailto:firemanfoxzx@gmail.com">
            Email Help Center
         </a>
 
-        <p>
-            <strong style="color:#ff6a00;">
-                firemanfoxzx@gmail.com
-            </strong>
+        <p style="color:#ff6a00">
+            firemanfoxzx@gmail.com
         </p>
     </div>
 </section>
@@ -476,6 +458,79 @@ footer strong {
 </footer>
 
 <script>
+
+/* YOUR GOOGLE APPS SCRIPT URL */
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbwnnm014k5GH2ns8a4yBD-VhOciLkYArH9tB6V6Ox0zviBzBkqS0mB1e6lKeZG_-3Tg/exec";
+
+
+/* HELP CENTER FORMS */
+document.querySelectorAll(".help-form").forEach(form => {
+
+    form.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const button = form.querySelector("button");
+        const status = form.querySelector(".form-status");
+
+        const originalText = button.textContent;
+
+        button.disabled = true;
+        button.textContent = "Sending...";
+        status.textContent = "Submitting your message...";
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        /* Anti-spam honeypot */
+        if (data.website) {
+            status.textContent = "Submission rejected.";
+            button.disabled = false;
+            button.textContent = originalText;
+            return;
+        }
+
+        /* Include selected bug category in report */
+        if (data.bug_type) {
+            data.message =
+                "Bug category: " + data.bug_type +
+                "\n\n" + data.message;
+        }
+
+        try {
+
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify(data)
+            });
+
+            status.textContent =
+                "Submission sent! Check your email for any reply.";
+
+            form.reset();
+
+        } catch (error) {
+
+            status.textContent =
+                "Could not send. Please try again or email us directly.";
+
+        } finally {
+
+            button.disabled = false;
+            button.textContent = originalText;
+
+        }
+
+    });
+
+});
+
+
 /* WEBSITE VISIT COUNTER */
 fetch("https://api.counterapi.dev/v1/fox-gaming-website/visits/up")
     .then(response => response.json())
@@ -486,12 +541,8 @@ fetch("https://api.counterapi.dev/v1/fox-gaming-website/visits/up")
     .catch(() => {
         document.getElementById("visitCount").textContent = "N/A";
     });
+
 </script>
 
 </body>
 </html>
-<form action="https://formsubmit.co/firemanfoxzx@gmail.com"
-      method="POST">
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
